@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<div>
+	    
+	    	<h3><i class="fas fa-search-plus"></i> Rechercher par arrondissement</h3>
+			<form action="rechercher.php" method="POST">
+			    
+				<strong><label for="arrondissement">
+					 Choisissez votre arrondissement
+				</label>
+				<strong>
+				<select name="arrondissement">
+					<?php for($i=13001;$i<13017;$i++):?>
+						<option value=<?=$i?>>
+							<?=$i?>
+						</option>
+					<?php endfor;?>	
+				</select>
+				<br>
+				<input type="submit" name="chercher" value="Rechercher">
+						
+			</form>
+	
+		<?php if(empty($messageR)==false): ?>
+			<p><?=$messageR?></p>
+		<?php endif; ?>	
+	</div>
+
+
+</html>

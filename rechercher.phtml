@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<div class="chercher">
+	    
+	    	<h3>Rechercher par arrondissement</h3>
+			<form action="rechercher.php" method="POST">
+			    
+				<label for="arrondissement">
+					<strong>
+						 Choisissez votre arrondissement
+					</strong>	 
+				</label>
+				<select name="arrondissement">
+					<?php for($i=13001;$i<13017;$i++):?>
+						<option value=<?=$i?>>
+							<?=$i?>
+						</option>
+					<?php endfor;?>	
+				</select>
+				<br>
+				<input type="submit" name="chercher" value="Rechercher">			
+		   </form>
+	
+		<?php if(empty($messageR)==false): ?>
+			<p><?=$messageR?></p>
+		<?php endif; ?>	
+	</div>
+
+	<!--L'endroit de publicité -->		
+	<div class="publicite" id="p1">
+			<h3>publicité</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+	</div>
+
+	<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+	<?php endif;?>	
+
+</html>

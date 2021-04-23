@@ -1,0 +1,110 @@
+
+	
+	<section class="tablette">
+		<div id="img1">
+
+			<img  src=<?=$annonceDetail[0]['url']?> style="width:100%; height:450px;" title='<?=$annonceDetail[0]['name'].', '.$sex.' '.$typeA.' le ' .$annonceDetail[0]['datePT'] ?>'>
+			<br>
+           
+			<a href="#" onclick="confirmation();"> <i class="fas fa-trash-alt"></i>
+			<span>Supprimer cette annonce<span></a>
+			<br>
+			
+
+		</div> 
+		<div class="tableD" >
+			<table >
+				<caption id="cap"><?=$annonceDetail[0]['name'].', '?> <?=$sex.' '?><?=$typeA?> </caption>
+				<tbody id="tr" >
+					<tr >
+						<th>Publié le </th>
+						<td><?=$datePublie?></td>
+					</tr>
+					<tr >
+						<th>Sexe </th>
+						<td><?php if($annonceDetail[0]['sex']=='male') echo 'mâle'; else echo $annonceDetail[0]['sex']; ?></td>
+					</tr>
+					<tr>
+						<th>Race </th>
+						<td><?=$annonceDetail[0]['race']?></td>
+					</tr>
+					<tr>
+						<th>Couleur </th>
+						<td><?=$annonceDetail[0]['couleurs']?></td>
+					</tr>
+					<tr>
+						<th>Poils </th>
+						<td><?=$annonceDetail[0]['poils']?></td>
+					</tr>
+					<tr>
+						<th>Pelage </th>
+						<td><?=$annonceDetail[0]['pelage']?></td>
+					</tr>
+					<tr>
+						<th>Castré/Stérilisé </th>
+						<td><?=$annonceDetail[0]['castre']?></td>
+					</tr>
+					
+					<tr>
+						<th><?=$typeA.' le'?> </th>
+						<td><?=$annonceDetail[0]['datePT']?></td>
+					</tr>
+					<tr>
+						<th><?=$typeA.' à'?> </th>
+						<td >
+							<?=$annonceDetail[0]['rue'].'<br>'?>
+							<?=$annonceDetail[0]['arrondissement'].' Marseille'?>
+							
+						</td>
+					</tr>
+					<tr   >
+				
+						<td colspan="2"  id="backColor" >
+							<?php 
+							if(empty($annonceDetail[0]['description'])==false)
+							{
+								echo '<strong >'."Plus d'information sur cette annonce :".'</strong>'; 
+								echo '<p>'. $annonceDetail[0]['description'].'</p>'; 
+							}
+							else echo "Il n'y a pas d'informations complémentaires."; 
+							 ?>
+							 	
+						</td>
+					</tr>					
+																																									
+				</tbody>
+			</table>
+		</div>
+		<div class="tableC">
+			 <table >
+			 	<caption><?=$messageContact?></caption>
+			 	<tbody id="talblCTr">
+			 		<th> Téléphone :</th>
+			 		<td><?=$annonceDetail[0]['phone']?></td>
+			 	</tbody>
+			 </table>
+		</div>
+    </section>
+
+
+
+		<?php if (preg_match('#trouvé#',$typeA)):?>
+   
+			<script >		
+		     document.getElementById("cap").style="background-color:#69C864;";
+		      document.getElementById("tr").style.border="2px solid green";
+		      document.getElementById("talblCTr").style.border="2px solid green";
+	
+			</script>	
+		<?php endif;?>		
+		
+   <script type="text/javascript">
+   	 function confirmation()
+   	 	 {
+			if (confirm("Voulez-vous vraiment supprimer cette annonce ?" ))
+				 {
+					window.location.href = "supprimerA.php?id=<?=$idchat?>&type=<?=$type?>"; 
+				 }
+		}
+   </script>   
+

@@ -1,0 +1,131 @@
+                <!-- messages:-->
+      <div class="messageE">
+         
+             <?php         
+         
+            if(empty($erreur)==false)
+              foreach ($erreur as $key => $value)
+              {
+                echo '<p>'.$value.'</p>'; 
+              }
+                 
+             if(empty($_SESSION['bien'])==false)
+                {
+                  echo '<p class="green">'.$_SESSION['bien'].'</p>';
+                  $_SESSION['bien']=null; 
+                 }
+             ?>
+
+        </div>
+
+<center>
+
+<div class="publicite">
+	<h2>Publicité <?=$id?></h2>
+
+
+<?php if($id==1): ?>
+  <?php if(empty($publiciteDetail1)==false):?> 
+
+	<a href="<?=$publiciteDetail1[0]['lien']?>">				    <!--loop-->
+		<video width="300" height="250" controls="true" poster="video_poster.jpg" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" data-weborama-videoplayer="true" preload="metadata" autobuffer="false" >
+		<source src="<?=$publiciteDetail1[0]['url']?>" type="video/mp4">
+		</video>
+	</a>
+	<br>
+  <?php else: ?>
+        <a href="<?=$publiciteDetail[0]['lien']?>">                    <!--loop-->
+        <video width="300" height="250" controls="true" poster="video_poster.jpg" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" data-weborama-videoplayer="true" preload="metadata" autobuffer="false" >
+        <source src="<?=$publiciteDetail[0]['url']?>" type="video/mp4">
+        </video>
+    </a>
+    <br>
+  <?php endif; ?> 
+	<form method="POST" action="publicite.php?id=<?=$id?>" enctype="multipart/form-data">
+			<h3 class="h3">Changez votre publicité</h3>
+			
+			<label for="uplaodI" >Modifiez la  vidéo </label>            
+            <input type="file" name="uplaodI" id="uplaodI" class="padd">
+            <br>
+            <label for="lien">Modifiez le lien</label>
+            <?php if(empty($publiciteDetail1)==false):?> 
+                <input type="text" id="lien" name="lien" value="<?=$publiciteDetail1[0]['lien']?>">
+            <?php else: ?>
+                 <input type="text" name="lien" value="<?=$publiciteDetail[0]['lien']?>">
+            <?php endif;?>     
+            <br>
+            
+            <label for="vide"> <span>Voulez-vous que cette publicité soit vide et invisible devant l'utilisateur ?</span></label>
+            <select name="vide">
+                <option value="Non">Non</option>
+            	<option value="Oui">Oui</option>
+            </select>
+            <br>
+            <input type="submit" name="changer" value="Enregistrer" onclick="message()">
+		
+	</form>
+<?php endif;?>  
+<?php if(in_array($id, [2,3,4])): ?> 
+   <?php if(empty($publiciteDetail1)==false):?> 
+
+        <a href="<?=$publiciteDetail1[0]['lien']?>">                    <!--loop-->
+            <img width="300" height="250" src="<?=$publiciteDetail1[0]['url']?>" >
+        </a>
+        <br>
+   <?php else: ?>
+
+        <a href="<?=$publiciteDetail[0]['lien']?>">                    <!--loop-->
+            <img width="300" height="250" src="<?=$publiciteDetail[0]['url']?>" >
+        </a>
+        <br>
+
+  <?php endif; ?> 
+    <form method="POST" action="publicite.php?id=<?=$id?>" enctype="multipart/form-data">
+            <h3 class="h3">Changez votre publicité</h3>
+            
+            <label for="uplaodI">Modifiez la photo </label>            
+            <input type="file" name="uplaodI" id="uplaodI" class="padd">
+            <br>
+            <label for="lien">Modifiez le lien</label>
+            <?php if(empty($publiciteDetail1)==false):?> 
+                <input type="text" id="lien" name="lien" value="<?=$publiciteDetail1[0]['lien']?>">
+            <?php else: ?>
+                 <input type="text" name="lien" value="<?=$publiciteDetail[0]['lien']?>">
+            <?php endif;?>     
+            <br>
+           
+            <label for="vide"> <span>Voulez-vous que cette publicité soit vide et invisible devant l'utilisateur ?</span></label>
+            <select name="vide">
+                <option value="Non">Non</option>
+                <option value="Oui">Oui</option>
+            </select>
+            <br>
+            <input type="submit" name="changer" value="Enregistrer" onclick="message()">
+        
+    </form>
+  
+<?php endif;?>      
+</div>
+</center>
+<!-- javascript-->
+<script type="text/javascript">
+        function message()
+        {
+
+
+
+          if(confirm("Voulez-vous vraiment modifier votre publicité ?"))
+          {
+            var v=1;
+             
+          }
+          if(v!==1)
+          {
+            document.write("Vous avez renoncé à enregistrer !");
+            
+            setTimeout(function() {window.location.assign("publicite.php?id=<?=$id?>");},2500);                 
+                        
+          }  
+        }
+        
+    </script>

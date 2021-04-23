@@ -1,0 +1,69 @@
+
+
+	<div>
+		<h3 class="h3">Vous pouvez changer  votre mot de passe </h3>
+
+		<center>
+			<form action="gerer.php" method="POST" >
+				<label for="oldPassword" id="bouge1" >Ancien mot de passe </label>
+				<input type="password" name="oldPassword" maxlength="12" minlength="6" >
+				<br class="espace">
+			
+				<label for="newPassword" id="bouge2"> Nouveau mot de passe </label>
+				<input type="password" name="newPassword"  maxlength="12" minlength="6">
+				<br class="espace">
+			
+		        <label for="rNewPassword"> Répétez le nouveau mot de passe </label>
+				<input type="password" name="rNewPassword" maxlength="12" minlength="6" >
+			    <br class="espace">
+				<input type="submit" name="submit" value="Enregistrer" onclick="message()" id="bouge3">			
+			</form>
+		</center>
+				        <!-- messages:-->
+		<div class="messageE">
+		       
+	             <?php         
+	         
+	             if(empty($_SESSION['messageCM'])==false)
+	             {
+	             	echo "<p class='green'>".$_SESSION['messageCM'].'</p>'; 
+
+		             $_SESSION['messageCM']=null; 
+	             }
+	       
+		        if(empty($_SESSION['erreur'])==false)
+	            	foreach ($_SESSION['erreur']as $key => $value)
+	            	{
+	            		echo '<p>'.$value.'</p>'; 
+	            		$_SESSION['erreur']=null; 
+
+	            	}    
+		        
+		                     
+	             ?>
+
+	    </div>			
+	</div>
+
+<!-- javascript-->
+<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment modifier votre mot de passe ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à enregistrer !");
+          	
+          	setTimeout(function() {window.location.assign("gerer.php");},2500);             	
+          	        	
+          }	 
+		}
+        
+	</script>

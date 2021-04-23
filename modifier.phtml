@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<div class="modifierM">
+		<form action="modifier.php?idchat=<?=$idchat?>&type=<?=$type?>" method="POST">
+			<h3 id="h3M">modifier votre annonce</h3>
+
+
+			<label >Votre date de naissance : </label>
+
+			<input type="date" name="dateNaissance">
+			
+			<input   type="submit" name="modifier" value="Modifier">
+		</form>
+	</div>
+	        <!-- messages:-->
+    <div>
+	        	
+        <?php 
+      
+             if(empty($messageE)==false)
+             	echo '<p style="color:red;">'.$messageE.'</p>'; 
+        ?>
+	</div>	
+
+		<!--L'endroit de publicité -->		
+		<div id="p1" class="publicite">
+			<h3>Publicité</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>			
+	        
+</html>

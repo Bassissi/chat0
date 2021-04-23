@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<section class="partie1">
+	<section>
+		<div class="affiche" >
+			<a href="ajouter.php?type=perdu" title="Publiez une annonce pour un chat perdu "> J'ai perdu mon chat  </a>
+		
+			<?php 
+				$counter=0; 
+				foreach ($annoncePs as $key)
+				$counter+=1; 
+			    if($counter==1|$counter==0)
+				    	$message=$counter.' chat perdu'; 
+				else
+				    	$message=$counter.' chats perdus';
+	        ?>
+	        <?php if($counter>=1):?>
+	        	<a href="perdus.php"><?=$message?></a>
+	        <?php else: ?>
+	        	<?=$message?>
+	        <?php endif;?>
+
+
+	        
+         
+		</div>
+
+
+         	
+		<div class="affiche" >
+			<a href="ajouter.php?type=trouve" title="Publiez une annonce pour un chat trouvé "> J'ai trouvé un chat  </a>
+			<?php 
+				$counter=0; 
+				foreach ($annonceTs as $key)
+				$counter+=1; 
+			    if($counter==1|$counter==0)
+			    	$message=$counter.' chat trouvé'; 
+			    else
+			    	$message=$counter.' chats trouvés';
+            ?>
+            <?php if($counter>=1):?>
+	        	<a href="trouves.php"><?=$message?></a>
+	        <?php else: ?>
+	        	<?=$message?>
+	        <?php endif;?>
+		</div>
+
+    </section>
+       <!-- On cherche nos annonces-->
+	<section>
+			<?php if (empty($annoncePs)!==true):?>
+				<table class="table1">
+					 <caption >Les chats perdus</caption>	
+					<tbody>
+
+						<?php foreach($annoncePs as $key =>$annonce): ?>
+
+							<tr>
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='perdue';  
+									}
+									else
+									{
+										$sex='chat';
+										$type='perdu'; 
+									}
+								?>
+
+								<td><img src=<?=$annonce['url']?> style="width:125px; height: 125px;" title='<?=$annonce['name'].', '.$sex.' '.$type.' le ' .$annonce['datePT'] ?>'></td>
+
+
+								<td>
+									<p><?=$annonce['name'].', '.$sex.' <span style="color:red">'.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>'.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</td>
+								
+								<td>
+								   
+									<a href='detail.php?idchat=<?=$annonce['idchat']?>&type=perdu'>Le détail » 
+									</a>
+								</td>
+							</tr>
+
+                        <?php  endforeach;?>
+					</tbody>
+				</table>
+			<?php endif;?>
+
+			<?php if (empty($annonceTs)!==true):?>
+				<table class="table2">
+					<caption>Les chats trouvés</caption>	
+					<tbody>
+
+						<?php foreach($annonceTs as $key =>$annonce): ?>
+
+							<tr>
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='trouvée';
+									} 
+									else
+									{
+										$sex='chat';
+										$type='trouvé'; 
+									}
+								?>
+
+								<td><img src=<?=$annonce['url']?> style="width:125px; height: 125px;" title='<?=$annonce['name'].', '.$sex.' '. $type.' le '.$annonce['datePT'] ?>'></td>
+
+
+								<td>
+									<p><?=$annonce['name'].', '.$sex.' <span style="color:green;"> '.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</td>
+								
+								<td>
+									<a href="detail.php?idchat=<?=$annonce['idchat']?>&type=trouve">
+										 Le détail » 
+									</a>
+								</td>
+							</tr>
+							
+                        <?php  endforeach;?>
+					</tbody>
+				</table>
+			<?php endif;?>
+			<?php if (empty($annonceRTs)!==true):?> 
+				<table class="table3">
+					<caption>Les chats retrouvés</caption>	
+					<tbody>
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+							<tr>
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<td><img src=<?=$annonce['url']?> style="width:125px; height: 125px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>'></td>
+
+
+								<td>
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?=$annonce['name'].', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</td>
+								
+								<td>
+									<img src="img/0782440117.png" style="width:75px; height: 75px;">
+								</td>
+							</tr>
+							
+                        <?php  endforeach;?>
+					</tbody>
+				</table>
+			<?php endif;?>				
+
+		
+	</section>
+</section>
+	<aside>
+
+		<div>
+			<?php include "rechercherAside.phtml" ?>			
+		</div>
+
+	
+		<!--L'endroit de publicité -->					
+
+		<div id="p1">
+				<h3 > Publicité</h3>				
+				<a href="<?=$publiciteDetail[0]['lien']?>">
+				    <!--loop-->
+					<video width="300" height="250" controls="true" poster="video_poster.jpg" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" data-weborama-videoplayer="true" preload="metadata" autobuffer="false" >
+					<source src="<?=$publiciteDetail[0]['url']?>" type="video/mp4">
+					</video>
+				</a>	
+		</div>    
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+  		
+	</aside>
+
+
+</html>

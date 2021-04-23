@@ -1,0 +1,37 @@
+<div>
+	<table class="contact">
+		<tr>
+			<th>Hmzeh Bassissi</th>
+		</tr>
+		<tr>
+			<td>Développeur WEB</td>
+		</tr>
+		<tr>
+
+			<td><i class="fas fa-mobile-alt"></i>          0782440117</td>
+		</tr>
+		<tr>
+			<td>
+			    
+				<a href="mailto:?to=hamzehbassissi@gmail.com">
+				<i class="fas fa-envelope"></i>
+				 hamzehbassissi@gmail.com
+				</a>
+			</td>
+		</tr>		
+	</table>
+</div>
+<!--L'endroit de publicité -->		
+<div class="publicite" id="p1">
+        <h3>publicité</h3>
+		<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+</div>
+
+<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+<?php endif;?>	
+

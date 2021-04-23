@@ -1,0 +1,487 @@
+#Minuscule
+{
+	text-transform: lowercase;
+}
+#Majuscule
+{
+	text-transform: uppercase;
+}
+/* globale*/
+
+
+body
+{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 62.5%;
+	line-height: 1.8;
+	margin:0; 
+	font-size: 1rem; 
+
+}
+p::first-letter,caption::first-letter
+{
+    text-transform: uppercase;
+}
+image
+{
+	width:100%; 
+}
+p::first-letter,caption::first-letter
+{
+    text-transform: uppercase;
+}
+h1,h2,a,caption 
+{
+	font-family: 'Shrikhand', cursive;
+
+}
+main
+{
+	
+	margin:0; 
+	width:100%;
+	background-color:#EAE6E4; 
+	
+}
+.corp
+{
+	width: 70%; 
+	display: inline-block;
+	vertical-align: text-top;
+}
+aside
+{
+	width: 28%; 
+	
+	padding-bottom: 25%;
+	display: inline-block;
+	vertical-align: text-top;	 
+}
+nav 
+{   
+	background-color:#228F83; 	
+	border-radius: 5px;	
+	padding: 15px;
+	padding-left: 20%;
+	list-style: none;  	  
+}
+nav li
+{
+	padding-bottom: 7px; 
+}
+ul
+{
+	list-style: none; 
+	margin-left: -33px; 
+}
+nav a 
+{
+	text-decoration: none; 
+	color:white;
+	padding: 10px;
+	transition: background-color 0.2s ease 0s;	 	 
+}
+nav a:hover
+{
+	background-color:#1D7A6D;   
+}
+nav h3
+{
+	font-family: 'Shrikhand', cursive;
+	color:#881D27;
+}
+
+form h2
+{
+   color:#881D27;
+   padding-top: 5px; 
+
+}
+
+form input[type='text'],form input[type='password'] 
+{
+	
+	width: 30%; 
+    height: 20px; 
+
+}
+/* login.phtml */
+#identifiant
+{
+	padding-right: 2.5%; 
+
+
+}
+.espace
+{
+  margin-bottom:  10px;
+}
+form input[type='submit'] 
+{
+	
+	width: 15%; 
+	height: 35px; 
+	margin-left: 11%; 
+    padding: 5px; 	
+   background-color: #008080; 
+   border-radius: 5px;   
+   border:1px solid;
+   color:white;
+}
+.messageE
+{
+	text-align: center; 
+	color: red; 	
+}
+#detailAdmin
+{
+	background: no-repeat url("../img/nav.jpg");	
+	background-position:center;
+	padding: 115px; 
+}
+#detailAdmin h2
+{
+	color:#881D27;
+	padding-top: 25px; 
+}
+
+/* changerMA.phtml*/
+.h3
+{
+	text-align: center; 
+	padding: 10px; 
+	color: white; 
+	background-color:#008080; 
+	border-radius: 5px;  
+	margin-left: 15px; 
+}
+#bouge1
+{
+	padding-right: 10.5%; 
+}
+#bouge2
+{
+	padding-right: 9%; 
+}
+#bouge3
+{
+	margin-left: 30%; 
+}
+.green
+{
+	color:green;
+}
+
+
+/* les tableaux*/
+table
+{
+	
+	width:100%; 	 
+	margin-bottom: 10px; 
+	border:1px  solid red;
+	border-collapse: collapse;
+
+}
+table caption
+{
+	text-align: center;
+	background-color:#9E444B; 
+	color:white; 
+	margin-bottom: 5px; 
+	margin-top: 10px;
+	padding: 5px; 
+}
+table tbody td
+{
+	
+	padding: 5px; 
+ 
+
+}
+table tbody td a 
+{
+	
+	display: block; 
+	margin-top: -20px; 
+	margin-left: -100px;
+
+}
+table tbody td a:hover
+{
+	
+	color:#881D27;
+	
+}
+table tbody tr
+{
+	background-color: #FFFFFF;	
+	border: 1px  solid red; 
+
+}
+
+.table2 tbody tr
+{
+	border:1px  solid green;
+
+}
+
+
+.table2 caption 
+{
+	background-color:#8EA734;
+}
+
+.table3 caption 
+{
+	background-color:#228F83;
+}
+.table3 tbody tr
+{
+	border:1px  solid blue;
+}
+.table3 a
+{
+	text-decoration: none;
+	padding: 5px; 
+	border:1px solid;
+	border-radius: 5px;
+	text-align: center;  
+	color:white; 
+	background-color: #008080; 
+	width: 100px; 
+}
+.tableD table 
+{
+	width: 100%; 
+
+}
+.tableD table tbody
+{
+	border:2px solid red;
+
+}
+.tableD table tr
+{
+	border:0px; 
+
+}
+.tableD table td p 
+{
+	width:500px;   
+	margin-bottom: 0; 
+    text-align: justify;
+    overflow: auto; 
+
+
+}
+.tableD table td ,.tableD table th  
+{
+  
+  padding: 8px; 
+    
+}
+.tableD table td
+{
+	text-align: center;
+}
+.tableD table tr:nth-child(10) td,.tableD table tr:nth-child(9) td
+{
+	text-align: left;
+}
+.tableD table caption
+{
+  background-color: #CD0000; 
+
+  padding: 5px; 
+    
+}
+.tableD table tr
+{
+	background-color:white; 
+}
+.tableD table tr:nth-child(odd)
+{
+	background-color:#99CCCC; 
+}
+#img1 a 
+{
+	color:#881D27;
+	text-decoration: none; 
+}
+.tableC 
+{
+	width: 55%; 
+}
+.tableC table caption
+{
+  background-color: #99CCCC; 
+  padding: 7px; 
+  color:black;  
+}
+.tableC table th
+{
+	text-align: right; 
+	padding-right: 10px;  
+}
+.tableC table td
+{
+	text-align:left;  
+}
+.tableC table tbody
+{
+	border:2px solid red;  
+}
+
+/* les publicités */
+.publicite h2
+{
+	color:#881D27;
+}
+.publicite input[type='text']
+{
+	width: 53%; 
+	margin-top:10px; 
+	margin-bottom: 5px; 
+}
+.padd
+{
+	padding-right: 21%; 
+}
+.publicite input[type='submit']
+{
+
+	margin-top: 5px; 
+    margin-left: -0.85%;
+}
+/* pour la tablette*/
+@media screen and (max-width: 1024px)
+{
+    aside
+    {
+    	width:100%;
+    	display: block;
+        padding-bottom: 0; 
+
+    }
+    nav
+    {
+         border-radius: 0; 
+    }
+    aside nav li
+    {
+       display: inline-block;
+
+    }
+    nav li:nth-child(6)
+    {
+    	display: block; 
+    	width: 100%; 
+    }
+    .corp
+    {
+    	display: block;
+    	width: 100%; 
+    	margin-top: 0; 
+        padding-bottom: 35%;
+        
+    }
+    .h3
+    {
+    	margin-right: 2%; 
+    }
+}	
+@media screen and (max-width: 650px)
+{
+	aside nav
+	{
+		text-align: center;
+		margin-left:-6%;
+	}
+    aside nav li
+    {
+       display: block;
+
+    }
+    label
+    {
+    	display: block;
+    }
+    form input
+    {
+    	width: 100%; 
+    }
+    form input[type='submit'],#bouge3
+    {
+       width: 25%; 
+       margin-left: 0;     
+    }
+    .padd
+    { 
+         padding-left: 22%;          
+    }
+    .block
+	{
+	   	display: block;
+	}
+   .tableD
+   {
+   	width: 100%; 
+   }
+	.tableD table 
+	{
+		width: 100%; 
+
+	}
+	.tableD table tbody
+	{
+		border:2px solid red;
+
+	}
+	.tableD table tr
+	{
+		border:0px; 
+
+	}
+	.tableD table td p 
+	{
+		width: 250px;     
+		margin-bottom: 0; 
+	    text-align: justify;
+	    overflow: auto; 
+	
+	}
+	.tableD table td ,.tableD table th  
+	{
+	  
+	  padding: 2px; 
+	    
+	}
+	.tableD table td
+	{
+		text-align: center;
+	}
+	.tableD table tr:nth-child(10) td,.tableD table tr:nth-child(9) td
+	{
+		text-align: left;
+	}
+	.tableD table caption
+	{
+	  background-color: #CD0000; 
+
+	  padding: 5px; 
+	    
+	}
+	.tableD table tr
+	{
+		background-color:white; 
+	}
+	.tableD table tr:nth-child(odd)
+	{
+		background-color:#99CCCC; 
+	}   
+    .tableC
+    {
+    	width: 100%; 
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+   
+	<head>
+		<title>Où est donc mon chat marseillais ?</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/parDefaut.jpg" />
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/style1.css">
+		 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shrikhand" rel="stylesheet">  
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous">
+		</script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+	</head>
+
+	<body>
+
+		<main>
+
+			<aside>
+				<nav>
+					
+					<li><a href="logout.php">Se déconnecter</a></li>
+					<li><a href="gerer.php">Gérer votre compte</a></li>
+					<li><a href="perduA.php">Perdus</a></li>
+					<li><a href="trouveA.php">Trouvés</a></li>			
+					<li><a href="retrouveA.php">Retrouvés</a></li>
+					<li >
+						<ul>
+							<h3 >Publicité :</h3>
+							<li><a href="publicite.php?id=1">Publicité1</a> </li>
+							<li><a href="publicite.php?id=2">Publicité2</a> </li>
+							<li><a href="publicite.php?id=3">Publicité3</a> </li>
+							<li><a href="publicite.php?id=4">Publicité4</a> </li>
+
+						</ul>
+					</li>
+
+				</nav>	
+			</aside>
+		   <div class="corp">
+				<?php if (empty($template)!=true)
+				       {
+				     		include $template; 
+				       }
+
+	                  else
+	                  {
+	                  		include "login.phtml"; 
+	                  }
+				?>
+			</div>			
+
+		</main>
+	
+	</body>
+</html>

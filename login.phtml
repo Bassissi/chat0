@@ -1,0 +1,25 @@
+<div>
+  <div class="messageE" >
+			<?php 
+            if(empty($erreur)==false)
+            	foreach ($erreur as $key => $value)
+            	{
+            		echo '<p>'.$value.'</p>'; 
+            	}
+            	
+			?>
+  </div>
+  <center> 
+	<form method="POST" action="login.php" id="login">
+	 	<h2>Administrateur</h2>
+	 	<label for="identifiant" id="identifiant" >Identifiant</label><input type="text" name="id" minlength="19" maxlength="19">
+	 	
+	 	<br class="espace">
+	 	<label for="password">Mot de passe</label><input type="password" name="password" maxlength="12" minlength="6">
+	 	
+	 	<br class="espace">
+	 	<input type="submit" name="submit" value="se connecter">	
+	</form>
+   </center>	
+
+</div>

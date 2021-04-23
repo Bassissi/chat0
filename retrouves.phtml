@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<section>
+
+
+	<!-- On cherche nos annonces-->	
+
+		<div>
+			<?php if (empty($annonceRTs)!==true):?>
+				<table class="table3">
+     <!-- On compte combien on a des annonces-->				
+					<?php 
+						$counter=0; 
+						foreach ($annonceRTs as $key)
+						$counter+=1; 
+					    if($counter==1|$counter==0)
+						    	$message=$counter.' chat retrouvé'; 
+						else
+						    	$message=$counter.' chats retrouvés';
+			        ?>
+			        <?php if($counter>=0):?>	       
+			        	<caption><?=$message?> </caption>
+			        <?php endif;?>			           
+					<tbody>
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+							<tr>
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<td><img src=<?=$annonce['url']?> style="width:125px; height: 125px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>'></td>
+
+
+								<td>
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?=$annonce['name'].', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</td>
+								
+								<td>
+									<img src="img/0782440117.png" style="width:75px; height: 75px;">
+								</td>
+							</tr>
+							
+                        <?php  endforeach;?>
+					</tbody>
+				</table>
+			<?php endif;?>	
+		</div>
+
+	<!--L'endroit de publicité -->		
+		<div class="publicite" id="p1">
+		    <h3>publicité</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		</div>
+		
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+	</section>
+</html>

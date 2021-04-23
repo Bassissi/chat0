@@ -1,0 +1,12 @@
+<center>
+<div id='detailAdmin'>
+
+	<h2>Bienvenue sur votre compte</h2>
+	<h4> Vous êtes bien connecté</h4>
+	<p> <strong>Dernière connexion le : </strong> <?php 
+	$dateDerniereC=date("d/m/Y à H:i", strtotime($detailAdmin[0]['derniereC']));
+	echo $dateDerniereC; ?></p>
+
+
+</div>
+</center>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<div>
+		<h3 id="h3P">Modifier une annonce pour un chat perdu</h3>
+		<!--  les message d'erreurs -->
+		<div class="messageE">
+			<?php 
+            if(empty($erreur)==false)
+            	foreach ($erreur as $key => $value)
+            	{
+            		echo '<p>'.$value.'</p>'; 
+            	}
+            	
+			?>
+		</div>
+	
+
+		<form method="POST" action="modifierPT.php?idchat=<?=$idchat?>&type=perdu" enctype="multipart/form-data">	
+		 	
+		 	<fieldset>
+		 	    <legend><strong> Informations sur votre chat</strong></legend>
+		 	    <!--nom-->		
+				<label for="nom">Nom de votre chat   </label>
+				<input class="name" type="text" name="nom" size="15" maxlength="15" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ -]+" minlength="3" value="<?=$annonceDetail[0]['name'];?>">
+			    <br>
+		        <!--sex-->	
+				<label for="sex">Sexe</label>				
+				<input type="radio" name="sex" value="male" <?php if ($annonceDetail[0]['sex']=='male') echo 'checked';?>>
+				<label for="sex"> Mâle </label>				
+				<input type="radio" name="sex" value="femelle" <?php if ($annonceDetail[0]['sex']=='femelle') echo 'checked';?>>	
+				<label for="sex"> Femelle </label>			
+				<br>
+           
+		 		<!--race-->	
+				<label for="race">Race dominante </label>
+				<select name="race">
+
+						<option value="Aucune" <?php if ($annonceDetail[0]['race']=="Aucune") echo 'selected';?>>Aucune race particulière (croisé)</option>
+
+						<option value="Abyssin" <?php if ($annonceDetail[0]['race']=="Abyssin") echo 'selected';?>>Abyssin</option>
+
+						<option value="Américain à poil dur" <?php if ($annonceDetail[0]['race']=='Américain à poil dur') echo 'selected';?> >Américain à poil dur</option>	
+
+						<option value="American Bobtail" <?php if ($annonceDetail[0]['race']=="American Bobtail") echo 'selected';?>>American Bobtail</option>
+
+						<option value="American Shorthair" <?php if ($annonceDetail[0]['race']=="American Shorthair") echo 'selected';?>>American Shorthair</option>
+
+						<option value="Angora Turc" <?php if ($annonceDetail[0]['race']=="Angora Turc") echo 'selected';?>>Angora Turc</option>
+
+						<option value="Balinais" <?php if ($annonceDetail[0]['race']=="Balinais") echo 'selected';?>>Balinais</option>
+
+
+						<option value="Bengal" <?php if ($annonceDetail[0]['race']=="Bengal") echo 'selected';?>>Bengal</option>
+
+						<option value="Bleu Russe" <?php if ($annonceDetail[0]['race']=="Bleu Russe") echo 'selected';?>>Bleu Russe</option>
+
+						<option value="Bombay" <?php if ($annonceDetail[0]['race']=="Bombay") echo 'selected';?>>Bombay</option>
+
+						<option value="British Shorthair" <?php if ($annonceDetail[0]['race']=="British Shorthair") echo 'selected';?>>British Shorthair</option>
+
+						<option value="Burmese" <?php if ($annonceDetail[0]['race']=="Burmese") echo 'selected';?>>Burmese</option>
+
+						<option value="Chartreux"<?php if ($annonceDetail[0]['race']=="Chartreux") echo 'selected';?>>Chartreux</option>
+
+						<option value="Chat de gouttière"<?php if ($annonceDetail[0]['race']=="Chat de gouttière") echo 'selected';?>>Chat de gouttière</option>
+
+						<option value="Chat des bois Norvégiens"<?php if ($annonceDetail[0]['race']=="Chat des bois Norvégiens") echo 'selected';?>>Chat des bois Norvégiens</option>
+
+						<option value="Chat du Sri Lanka"<?php if ($annonceDetail[0]['race']=="Chat du Sri Lanka") echo 'selected';?>>Chat du Sri Lanka</option>
+
+						<option value="Chat sacré de Birmanie"<?php if ($annonceDetail[0]['race']=="Chat sacré de Birmanie") echo 'selected';?>>Chat sacré de Birmanie</option>
+
+						<option value="Commun"<?php if ($annonceDetail[0]['race']=="Commun") echo 'selected';?>>Commun</option>
+
+						<option value="Cornish rex"<?php if ($annonceDetail[0]['race']=="Cornish rex") echo 'selected';?>>Cornish rex</option>
+
+						<option value="Devon rex"<?php if ($annonceDetail[0]['race']=="Devon rex") echo 'selected';?>>Devon rex</option>
+
+						<option value="Européen"<?php if ($annonceDetail[0]['race']=="Européen") echo 'selected';?>>Européen</option>
+
+						<option value="Exotic Shorthair"<?php if ($annonceDetail[0]['race']=="Exotic Shorthair") echo 'selected';?>>Exotic Shorthair</option>
+
+						<option value="Himalayan"<?php if ($annonceDetail[0]['race']=="Himalayan") echo 'selected';?>>Himalayan</option>
+
+						<option value="Korat"<?php if ($annonceDetail[0]['race']=="Korat") echo 'selected';?>>Korat</option>
+
+						<option value="Maine Coon"<?php if ($annonceDetail[0]['race']=="Maine Coon") echo 'selected';?>>Maine Coon</option>
+
+						<option value="Mandarin"<?php if ($annonceDetail[0]['race']=="Mandarin") echo 'selected';?>>Mandarin</option>
+
+						<option value="Norvégien"<?php if ($annonceDetail[0]['race']=="Norvégien") echo 'selected';?>>Norvégien</option>
+
+						<option value="Ocicat"<?php if ($annonceDetail[0]['race']=="Ocicat") echo 'selected';?>>Ocicat</option>
+
+						<option value="Oriental"<?php if ($annonceDetail[0]['race']=="Oriental") echo 'selected';?>>Oriental</option>
+
+						<option value="Persan"<?php if ($annonceDetail[0]['race']=="Persan") echo 'selected';?>>Persan</option>
+
+						<option value="Ragdoll"<?php if ($annonceDetail[0]['race']=="Ragdoll") echo 'selected';?>>Ragdoll</option>
+
+						<option value="Rex Selkirk"<?php if ($annonceDetail[0]['race']=="Rex Selkirk") echo 'selected';?>>Rex Selkirk</option>
+
+						<option value="Scottish Fold"<?php if ($annonceDetail[0]['race']=="Scottish Fold") echo 'selected';?>>Scottish Fold</option>
+
+						<option value="Siamois"<?php if ($annonceDetail[0]['race']=="Siamois") echo 'selected';?>>Siamois</option>
+
+						<option value="Sibérien"<?php if ($annonceDetail[0]['race']=="Sibérien") echo 'selected';?>>Sibérien</option>
+
+						<option value="Somali"<?php if ($annonceDetail[0]['race']=="Somali") echo 'selected';?>>Somali</option>
+
+						<option value="Sphynx"<?php if ($annonceDetail[0]['race']=="Sphynx") echo 'selected';?>>Sphynx</option>	
+				</select>
+
+				<!--couleurs-->
+
+				<br>		 		
+				<label for="couleurs"> Couleurs </label>
+				<div style="display: inline-block; vertical-align: text-top;">					
+					<input type="checkbox" name="c1" value="noir"  <?php if(preg_match('#noir#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?> >
+					<label for="noir">Noir</label>	
+					<br>				
+					<input type="checkbox" name="c2" value="marron"  <?php if(preg_match('#marron#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?> >
+					<label for="marron">Marron</label>				
+	                <br> 				
+					<input type="checkbox" name="c3" value="gris" <?php if(preg_match('#gris#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?> >
+					<label for="gris">Gris</label>				
+	                <br>				
+					<input type="checkbox" name="c4" value="blans" <?php if(preg_match('#blans#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?>>	
+					<label for="blans">Blanc</label>			
+	                <br>                
+					<input type="checkbox" name="c5" value="beige"<?php if(preg_match('#beige#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?> >
+					<label for="beige">Beige</label>				
+	                <br>    
+					<input type="checkbox" name="c6" value="roux" <?php if(preg_match('#roux#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?>>
+					<label for="roux">Roux</label>				
+	                <br> 				
+					<input type="checkbox" name="c7" value="écaille" <?php if(preg_match('#écaille#',$annonceDetail[0]['couleurs'] )) echo 'checked'; ?>>
+					<label for="écaille">Ecaille</label>	
+				</div>			
+                <br> 
+                                                                             
+                <!--Longueur du pelage-->
+                <label for="poils">Longueur du pelage</label>
+                <select name=poils>
+	                <option value="court" <?php if ($annonceDetail[0]['poils']=="court") echo 'selected';?> >court</option>
+
+	                <option value="long" <?php if ($annonceDetail[0]['poils']=="long") echo 'selected';?> >long</option>	
+                </select>
+                <br class="espace">
+                <!--Dessin du pelage-->
+                <label for="pelage">Dessin du pelage</label>
+                <select name=pelage>
+	                <option value="uni" <?php if ($annonceDetail[0]['pelage']=="uni") echo 'selected';?> >uni</option>
+
+	                <option value="tigré" <?php if ($annonceDetail[0]['pelage']=="tigré") echo 'selected';?>>tigré</option>
+
+	                <option value="taché" <?php if ($annonceDetail[0]['pelage']=="taché") echo 'selected';?>>tacheté</option>	
+                </select>
+                <br class="espace">
+                <!--Castré-->
+                <label for="castre">Castré/Stérilisé </label>
+				<input type="radio" name="castre" value="oui" <?php if ($annonceDetail[0]['castre']=="oui") echo 'checked';?>>
+				<label for="castre"> Oui </label>	
+
+				<input type="radio" name="castre" value="non" <?php if ($annonceDetail[0]['castre']=="non") echo 'checked';?>>	
+				<label for="castre"> Non </label>	
+                 <br class="espace">
+
+                 <!--Photo-->
+                
+                 <img src="<?=$annonceDetail[0]['url']?>"  style="width:175px; height:175px;">
+                 <label for="uplaodI">Modifier sa photo </label>
+                 <input type="file" name="uplaodI">
+                 <br class="espace">             
+                
+                <!--datePT-->
+                 <label class="block">Date de la disparition  </label> 
+                
+                 <select name="jourPT">
+				    <?php for($i=1;$i<32;$i++):?>
+						<option 					
+						<?php
+						 if($i==1|$i<=9):?>						  
+						 	 <?='value=0'.$i?> 
+						 	 <?php $id='0'.$i; 
+
+						 	 if(substr($annonceDetail[0]['datePT'],0,2)==$id)
+						      {	
+
+						 	  echo'selected'; 
+						 	  }
+						 	 ?> 
+						 	}
+						<?php  else:?>
+						    
+						  	  <?='value='.$i?>
+						  	<?php  
+						 	  if(substr($annonceDetail[0]['datePT'],0,2)==$i)
+						 	  echo 'selected';			   	  						  
+						     ?>
+                          <?php endif;?>
+
+						 > 
+						   <?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?>						  	
+						</option>
+					<?php endfor;?>
+			    </select>
+				<select name="moisPT">
+				    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+
+                      <option <?php $j=$key+1;if($j==1 | $j<=9):?>
+                           <?='value=0'.$j?> 
+						 	 <?php $jm='0'.$j; 
+
+						 	 if(substr($annonceDetail[0]['datePT'],3,2)==$jm)
+						      {	
+
+						 	  echo'selected'; 
+						 	  }
+						 	 ?> 
+						 	}
+						    <?php  else:?>
+						    
+						  	  <?='value='.$j?>
+						  	<?php  
+						 	  if(substr($annonceDetail[0]['datePT'],3,2)==$j)
+						 	  echo 'selected';			   	  						  
+						     ?>
+                            <?php endif;?>>
+				           <?=$value?>					
+						</option>
+
+					<?php endforeach;?>
+				</select>
+				<select name="anPT">
+				    <?php for($i=date('Y')-4;$i<=date('Y');$i++):?>
+						<option value=<?=$i?><?php if($i==substr($annonceDetail[0]['datePT'],6,4)):?> <?='selected'?> <?php endif?>><?=$i?></option>
+					<?php endfor;?>
+				</select>                
+                  <br class="espace"> 
+                 <label for="description" style="vertical-align: top">Caractères particuliers</label>
+                 <textarea placeholder="Vous pouvez donner des informations complèmentraires" name="description" maxlength="200"  ><?=$annonceDetail[0]['description'];?></textarea>
+                 <br class="espace">                
+                 <label for="rue"> Rue</label>
+				 <input type="text" name="rue" class="rue"  maxlength="40"  pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ,.'- 0-9-]+" minlength="3" value="<?=$annonceDetail[0]['rue'];?>">
+			    <br> 
+				<label for="arrondissement">Arrondissement</label>
+				<select name="arrondissement">
+					<?php for($i=13001;$i<13017;$i++):?>
+						<option value=<?=$i?> <?php if ($annonceDetail[0]['arrondissement']==$i) echo 'selected';?>>
+							<?=$i?>
+						</option>
+					<?php endfor;?>	
+				</select>
+
+	        </fieldset>
+	        <fieldset>
+	        	<legend ><strong> Vos données</strong></legend>
+	        	<label for="dateNaissance" class="block">Date de naissance</label>
+                 <select name="jour">
+				    <?php for($i=1;$i<32;$i++):?>
+					<option 					
+						<?php
+						 if($i==1|$i<=9):?>						  
+						 	 <?='value=0'.$i?> 
+						 	 <?php $id='0'.$i; 
+
+						 	 if(substr($annonceDetail[0]['dateNaissance'],0,2)==$id)
+						      {	
+
+						 	  echo'selected'; 
+						 	  }
+						 	 ?> 
+						 	}
+						<?php  else:?>
+						    
+						  	  <?='value='.$i?>
+						  	<?php  
+						 	  if(substr($annonceDetail[0]['dateNaissance'],0,2)==$i)
+						 	  echo 'selected';			   	  						  
+						     ?>
+                          <?php endif;?>
+                          
+						 > 
+						   <?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?>	
+					</option>
+					<?php endfor;?>
+			    </select>
+	            <?='/'?>
+
+				<select name="mois">
+				    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+				    <option <?php $j=$key+1;if($j==1 | $j<=9):?>
+                           <?='value=0'.$j?> 
+						 	 <?php $jm='0'.$j; 
+
+						 	 if(substr($annonceDetail[0]['dateNaissance'],3,2)==$jm)
+						      {	
+
+						 	  echo'selected'; 
+						 	  }
+						 	 ?> 
+						 	}
+						<?php  else:?>
+						    
+						  	  <?='value='.$j?>
+						  	<?php  
+						 	  if(substr($annonceDetail[0]['dateNaissance'],3,2)==$j)
+						 	  echo 'selected';			   	  						  
+						     ?>
+                          <?php endif;?>>
+				       <?=$value?>					
+						</option>
+
+					<?php endforeach;?>
+				</select>
+	            <?='/'?>
+
+				<select name="an" >
+				    <?php for($i=1935;$i<=date('Y')-15;$i++):?>
+						<option value=<?=$i?><?php if($i==substr($annonceDetail[0]['dateNaissance'],6,4)):?> <?='selected'?> <?php endif?>><?=$i?></option>
+					<?php endfor;?>
+				</select>
+				<br class="espace">
+			<!-- Phone-->
+			<label for="phone">Numéro de téléphone</label>
+			<input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" value="<?=$annonceDetail[0]['phone']?>">
+	        </fieldset>
+            <input type="submit" name="submit" class="submit" value="Modifier" onclick="message()" >  	        
+		</form>
+
+	</div>
+		<!-- L'endroit de publicité-->
+		<div id="p1" class="publicite">
+			<h3>Publicité</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		<div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>			
+	<!-- javascript-->
+	<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment modifier votre annonce ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à modifier votre annonce !");
+          	
+          	setTimeout(function() {window.location.assign("index.php");},2500);             	
+          	        	
+          }	 
+		}
+        
+	</script>				
+</html>

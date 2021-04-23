@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<div>
+		<form action="supprimer.php?idchat=<?=$idchat?>&messageS=<?=$messageS?>&type=<?=$type?>" method="POST">
+			<h3 id="h3S">Supprimer vorte annonce</h3>
+			<div class="supprimer">
+				<label for='messageR'> <strong><?=$messageS?></strong></label>
+				<select name="messageR">
+					<option value="Oui">Oui</option>
+					<option value="Non">Non</option>
+				</select>
+	            <br class="espace">
+				<label >Votre date de naissance : </label>
+
+				<input type="date" name="dateNaissance">
+				
+				<input type="submit" name="supprimer" value="Supprimer" onclick="message()">
+			</div>
+		</form>
+	</div>
+	        <!-- messages:-->
+    <div>
+	        	
+        <?php 
+      
+             if(empty($messageSCS)==false)
+             	echo '<p style="color:red; text-align:center;">'.$messageSCS.'</p>'; 
+        ?>
+	</div>	
+
+		<!--L'endroit de publicité -->		
+		<div id="p1" class="publicite">
+	        <h3>Publicité</h3>	
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		</div>
+
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>			
+	<!-- javascript-->
+	<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment supprimer cette annonce ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à supprimer votre annonce !");
+          	
+          	setTimeout(function() {window.location.assign("index.php");},2500);             	
+          	        	
+          }	 
+		}
+        
+	</script>	        
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	<?php if (empty($templateTitle)==true)
+			$templateTitle="chats perdus ou trouvés à Marseille France";
+	?>
+	<?php if (empty($templateDescription)==true)
+			$templateDescription="un site pour publier des annonces chat perdu ou chat trouvé à Marseille";
+	?>
+	<?php if (empty($templateKeywords)==true)
+			$templateKeywords="chat, perdu, Marseille, France, annonces, publier";
+	?>
+		<title><?=$templateTitle?></title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/parDefaut.jpg" />
+		<meta charset="utf-8">
+		<meta http-equiv="“content-language”" content="“fr-fr”">
+		<meta name="robots" content="index, follow">     
+		<meta name="author" content="Hmzeh Bassissi développeur web à Marseille"> 
+		<meta name="description" content="<?=$templateDescription?>" >
+		<meta name="keywords" content="<?=$templateKeywords?>">
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shrikhand" rel="stylesheet">  
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous">
+		</script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous">
+        </script>		
+	</head>
+
+	<body>
+		<header>
+	
+			<h1>Où est donc mon chat marseillais ?</h1>
+			<a href="admin.phtml"><i class="fas fa-cogs"></i></a>
+			<nav>
+				<a href="index.php">Accueil</a>
+				<a href="rechercher.php">Rechercher</a>
+				<a href="perdus.php">Perdus</a>
+				<a href="trouves.php">Trouvés</a>
+				<a href="publier.php">Publier une annonce</a>
+				<a href="retrouves.php">Retrouvés</a>
+				<a href="meilleur.php">Ce site est le meilleur</a>
+				<a href="contact.php">Contact</a>
+			</nav>	
+		</header>
+		<main>
+
+			<?php if (empty($template)!=true)
+			       {
+			     		include $template; 
+			       }
+
+                  else
+                  {
+                  		include "index.phtml"; 
+                  }
+			?>
+		</main>
+	
+	</body>
+</html>

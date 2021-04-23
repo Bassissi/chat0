@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <div class="publier">
+		<h3>Publier une annonce</h3>
+		<section>
+				<div class="affiche1">
+
+					<a href="ajouter.php?type=perdu" title="Publiez une annonce pour un chat perdu ">J'ai perdu mon chat » </a>
+		         
+				</div>
+
+	  	
+				<div class="affiche1">
+
+					<a href="ajouter.php?type=trouve" title="Publiez une annonce pour un chat trouvé ">J'ai trouvé un chat » </a>
+			
+				</div>
+		<!--L'endroit de publicité -->		
+				<div class="publicite" id="p1">
+				<h3>publicité</h3>
+				<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+				</div>	
+
+				<?php if($publiciteDetail[0]['url']=='null'):?>
+
+					<script >		
+				     document.getElementById("p1").style.display = "none";	
+					</script>
+					
+				<?php endif;?>	
+  		     
+		<section>
+	</div>
+</html>

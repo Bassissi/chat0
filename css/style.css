@@ -1,0 +1,863 @@
+/* globale*/
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+body
+{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 62.5%;
+	line-height: 1.8;
+	margin:0; 
+	font-size: 1rem; 
+
+}
+image
+{
+	width:100%; 
+}
+p::first-letter,caption::first-letter
+{
+    text-transform: uppercase;
+}
+header
+{
+	background: no-repeat url("../img/nav.jpg");	
+	background-position:center;	 	
+	background-color: #FFFFFF; 
+	width:80%;
+	margin:0 auto;
+	margin-top:-20px; 
+}
+header > a
+{
+	padding-left: 10px;
+	color:black; 
+
+}
+header h1
+{
+    font-size: 3rem; 
+    padding: 196px 10px 114px 10px; 
+    color:#881D27;
+    margin:0;
+}
+
+h1,h2,a,caption 
+{
+	font-family: 'Shrikhand', cursive;
+
+}
+nav 
+{   
+	background-color:#228F83; 	
+	border-radius: 5px; 
+	font-size: 0.98rem;
+	padding: 10px;	  
+}
+nav a 
+{
+	text-decoration: none; 
+	color:white;
+	padding: 10px;
+	transition: background-color 0.2s ease 0s;
+	  	 
+}
+nav a:hover
+{
+	background-color:#1D7A6D;   
+}
+main
+{
+	margin:0 auto;
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+	border-radius:10px;  
+	width:80%;
+	background-color:#EAE6E4; 
+	padding-bottom: 10px; 
+}
+
+/* index*/
+.affiche
+{   
+	width:45%;
+
+	display: inline-block;	
+	vertical-align:top; 
+	text-align: center;
+	font-size:0.95rem;	
+	border-radius: 14px; 
+	margin-top:15px;
+	margin-right: 10px;
+	padding: 7px; 
+}
+.affiche a 
+{
+	padding: 2px; 
+	display: block;
+	color:white;
+	
+}
+
+.affiche:nth-child(1)
+{
+	background-color:#9E444B; 
+	margin-left:10px;   
+}
+.affiche:nth-child(2)
+{
+	background-color:#8EA734;  
+}
+.partie1
+{
+	width:66%;
+	display: inline-block;
+	vertical-align: top;
+
+}
+aside
+{
+	width:33%;
+	display: inline-block;
+	vertical-align: top;
+	 
+}
+aside div
+{
+	background-color: white;
+	text-align: center;
+	border-radius: 20px 20px 15px 15px;
+	margin-bottom: 40px;    
+}
+
+aside :nth-child(1) h3
+{
+    padding: 15px; 
+    border-radius: 20px;
+    background-color:#228F83;
+    color:white;
+}
+aside :nth-child(2) h3
+{
+    padding: 15px; 
+    border-radius: 20px;
+    background-color:#624329;
+    color:white;
+}
+aside input
+{	
+	margin:10px 0px 10px  1%;	
+	padding: 4px; 
+	color:blue;			
+}
+
+aside video 
+{
+	padding-bottom: 10px; 
+}
+
+/* les tableaux*/
+table
+{
+	
+	width:100%; 	 
+	margin-bottom: 10px; 
+	border:1px  solid red;
+	border-collapse: collapse;
+
+}
+table tbody td
+{
+	
+	padding: 5px; 
+ 
+
+}
+table tbody td a 
+{
+	
+	display: block; 
+	margin-top: -20px; 
+	margin-left: -100px;
+
+}
+table tbody td a:hover
+{
+	
+	color:#881D27;
+	
+}
+table tbody tr
+{
+	background-color: #FFFFFF;	
+	border: 1px  solid red; 
+
+}
+
+.table2 tbody tr
+{
+	border:1px  solid green;
+
+}
+
+table caption
+{
+	text-align: center;
+	background-color:#9E444B; 
+	color:white; 
+	margin-bottom: 5px; 
+	margin-top: 10px; 
+}
+.table2 caption 
+{
+	background-color:#8EA734;
+}
+.table3 caption 
+{
+	background-color:#228F83;
+}
+.table3 tbody tr
+{
+	border:1px  solid blue;
+}
+
+/* publicité */
+.publicite
+{
+	width: 100%; 
+	margin:0 auto; 
+	padding: 0; 
+	background-color: #624329; 
+	border-radius: 5px;  
+}
+.publicite a
+{
+	display: block;	
+}
+.publicite h3
+{
+	text-align: center; 
+	color:white;
+	padding-top:10px;
+}
+.publicite img
+{
+	width: 100%; 
+	height: 400px;	
+    padding: 0px 6% 4% 6%; 
+}
+
+/* contact */
+.contact
+{
+	width: 100%; 
+	text-align: center;
+	border-color: white; 
+	
+}
+.contact a
+{
+	font-family: 'Noto Sans', sans-serif;
+	margin: 0; 
+}
+.contact th
+{
+	 font-size: 1.5rem; 
+	 color:#881D27;
+}
+
+.contact tr
+{
+	background-color:rgb(220, 224, 237);  
+	border-color: white;
+
+}
+.contact tr:nth-child(even)
+{
+     background-color: rgb(190, 191, 196);
+}
+
+/* message */
+.message
+{
+	text-align: center; 
+	color: red; 
+	padding-top: 5px; 
+}
+/*chercher*/
+
+.chercher
+{
+	text-align: center;
+	
+}
+
+.chercher h3
+{
+	padding: 10px;     
+    background-color:#228F83;
+    color:white; 
+}
+
+.chercher input
+{   
+    width: 100px; 
+    height: 40px; 
+	color:blue; 
+	margin-left:27%;
+	margin-top:5px; 
+}
+
+/* publier */
+.publier
+{
+	padding: 5px; 
+
+}
+.publier >h3
+{
+	    
+    background-color:#228F83;
+    color:white; 
+    text-align: center;	
+    padding: 5px; 
+    border-radius: 5px; 
+}
+.affiche1
+{   
+	width:48%;
+
+	display: inline-block;	
+	vertical-align:top; 
+	text-align: center;
+	font-size:1rem;	
+	border-radius: 14px; 
+	margin-top:15px;
+	margin-right: 10px;
+	padding: 15px; 
+}
+.affiche1 a 
+{
+	padding: 2px; 
+	display: block;
+	color:white;
+	
+}
+
+.affiche1:nth-child(1)
+{
+	background-color:#9E444B; 
+	margin-left:10px;   
+}
+.affiche1:nth-child(2)
+{
+	background-color:#8EA734;  
+}
+.asideP
+{
+	width: 31%; 
+	display: inline-block;
+	vertical-align: top; 
+	background-color: #4F9C93;
+	text-align: center;
+	padding: 3%; 	 
+}
+.asideP img
+{
+	width: 80%; 
+    border-radius: 100%;
+}
+.asideP a
+{
+     text-decoration: none; 
+     color: white;  
+     font-size: 1.2rem; 
+     display: block;
+     padding-bottom: 9%; 
+      
+ }
+ .asideP a:hover
+ {
+  color:#881D27;
+ }
+ .asideP a:nth-child(6)
+ {
+  padding-bottom: 25%; 
+ } 
+article 
+{
+	width: 68%; 
+	display: inline-block;
+	vertical-align: top; 
+	 
+}
+article h2,h3,p,ul{
+	padding: 0 2% 0 2%;
+}
+article h2{
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	color:#881D27;  
+}
+article h1
+{
+	background-color:#4F9C93;
+	text-align: center;
+	width: 100%;
+	padding: 1%;
+	color:#881D27;
+}
+article ul,article p:nth-child(even) ,article p:nth-child(7)
+{
+	margin-top: 0; 
+}
+#h3P
+{
+	text-align: center; 
+	padding: 10px; 
+	color: white; 
+	background-color: #9E444B; 
+}
+#h3T
+{
+	text-align: center; 
+	padding: 10px; 
+	color: white; 
+	background-color:#8EA734;	
+}
+fieldset,label,input,select
+{
+	padding: 7px; 
+}
+fieldset
+{
+	border: 1px solid  #9E444B; 
+}
+.field2
+{
+	border: 1px solid #8EA734; 
+}
+
+.name
+{
+   width: 27%;
+
+}
+.espace
+{
+	margin-bottom:  15px; 
+}
+textarea
+{
+	width: 50%; 
+	height: 100px; 
+}
+.rue
+{
+	width: 50%; 
+}
+.submit
+{   width: 150px;
+	height: 50px; 
+	display: block;
+	margin-left: 43%;
+	margin-top: 20px;  
+	color: red;	
+}
+.messageE
+{
+	text-align: center; 
+	color: red; 	
+}
+#h3S
+{
+	text-align: center; 
+	padding: 10px; 
+	color: white; 
+	background-color:red;  
+}
+input[type="date"]
+{
+	width: 25%; 
+}
+#h3M
+{
+	text-align: center; 
+	padding: 10px; 
+	color: white; 
+	background-color:orange;   
+}
+
+
+#img1
+{
+  width:44%;  
+  text-align: center; 
+  display: inline-block;
+  vertical-align: top; 
+  margin-top: 11px; 
+  margin-left: 17px; 
+
+
+}
+#img1 a
+{
+	color:#800000;
+	text-decoration: none; 
+}
+#img  a i {
+	margin-right:  10px; 
+}
+span
+{
+	padding-left: 5px; 
+}
+.tableD
+{
+	width: 52%; 
+	display: inline-block;
+
+}
+
+.tableD table 
+{
+	width: 100%; 
+
+}
+.tableD table tbody
+{
+	border:2px solid red;
+
+}
+.tableD table tr
+{
+	border:0px; 
+
+}
+.tableD table td p 
+{
+	width:500px;   
+	margin-bottom: 0; 
+    text-align: justify;
+    overflow: auto; 
+
+
+}
+.tableD table td ,.tableD table th  
+{
+  
+  padding: 8px; 
+    
+}
+.tableD table td
+{
+	text-align: center;
+}
+.tableD table tr:nth-child(10) td,.tableD table tr:nth-child(9) td
+{
+	text-align: left;
+}
+.tableD table caption
+{
+  background-color: #CD0000; 
+
+  padding: 5px; 
+    
+}
+.tableD table tr
+{
+	background-color:white; 
+}
+.tableD table tr:nth-child(odd)
+{
+	background-color:#99CCCC; 
+}
+.tableC 
+{
+	width: 55%; 
+}
+.tableC table caption
+{
+  background-color: #99CCCC; 
+  padding: 7px; 
+  color:black;  
+}
+.tableC table th
+{
+	text-align: right; 
+	padding-right: 10px;  
+}
+.tableC table td
+{
+	text-align:left;  
+}
+.tableC table tbody
+{
+	border:2px solid red;  
+}
+.supprimer
+{
+	text-align: center;
+}
+.supprimer input[type='submit']
+{
+	display: block;
+	width: 15%; 
+	margin-left: 44%; 
+	margin-top: 1%;
+	color:red; 
+}
+.article2
+{
+	width:100%; 
+}
+.article2 ul
+{
+	padding-left: 40px; 
+}
+/* pour la  tablette */
+@media screen and (max-width: 1024px)
+{  
+    header
+    {
+        background-position: 27% 2%; 
+    }
+	header h1
+	{
+		font-size: 2rem; 
+	}
+	nav 
+	{
+		text-align: center; 
+
+	}
+	nav a
+	{
+		width: 32%; 
+		display: inline-block; 
+		vertical-align: top;
+		font-size: 0.90rem; 
+	}
+
+	.partie1
+	{
+		width: 100%; 
+		display: block;
+
+	}
+    aside
+    {
+    	width: 50%; 
+    	display: block;
+    	margin-left: 25%; 
+
+    }
+    aside div
+    {
+    	margin-bottom: 10px; 
+    }
+    .publier section
+    {
+    	text-align: center; 
+    }
+   .affiche1
+   {
+   	width: 35%; 
+   }
+   #img1
+   {
+   display: block;
+   width: 100%; 
+
+   }
+   #img1 img
+   {
+    width: 100%; 
+   	margin-top: 10px;
+   	border-radius: 7px;  
+   	padding-right: 40px;
+   }
+   .tableD
+   {
+   	display: block;
+   	width: 100%; 
+  
+   }
+   .tablette
+   {
+   	width: 100%; 
+    text-align: center;
+   }
+
+}
+/* pour les mobiles*/
+@media screen and (max-width: 650px)
+{
+   
+    header
+    {
+    	background-position: -70px 10px; 
+    }
+    header h1
+    {
+    	font-size: 20px; 
+    }
+
+	nav
+	{
+	
+		margin-top: 30px;  
+	}
+	nav a 
+	{
+		width: 100%; 
+	}
+    table td 
+	{
+		display: block;
+		width: 100%; 
+	}
+
+    table td a 
+	{
+       margin: 0px; 
+       text-align: center;
+       margin-top: -15px; 
+
+	}
+	 input[type="submit"]
+	{
+		margin-left: 30%; 
+		margin-top: 10px; 
+
+	}
+	input[type="date"]
+	{
+		display: block;
+		width:50%; 
+		text-align: center;
+	}
+	fieldset input[type="text"],textarea
+	{
+		display: block; 
+		width: 70%; 
+	}
+    #p1
+    {
+    	display: none; 
+    }
+   aside 
+   {
+   	 width: 90%; 
+   	 margin: 0 auto; 
+   	 text-align: center;
+   }
+   aside input[type="submit"]
+   {
+   	margin-left: 0%; 
+   }
+   .block
+   {
+   	display: block;
+   }
+   .tableD
+   {
+   	width: 100%; 
+   }
+	.tableD table 
+	{
+		width: 100%; 
+
+	}
+	.tableD table tbody
+	{
+		border:2px solid red;
+
+	}
+	.tableD table tr
+	{
+		border:0px; 
+
+	}
+	.tableD table td p 
+	{
+		width: 250px;     
+		margin-bottom: 0; 
+	    text-align: justify;
+	    overflow: auto; 
+	
+	}
+	.tableD table td ,.tableD table th  
+	{
+	  
+	  padding: 2px; 
+	    
+	}
+	.tableD table td
+	{
+		text-align: center;
+	}
+	.tableD table tr:nth-child(10) td,.tableD table tr:nth-child(9) td
+	{
+		text-align: left;
+	}
+	.tableD table caption
+	{
+	  background-color: #CD0000; 
+
+	  padding: 5px; 
+	    
+	}
+	.tableD table tr
+	{
+		background-color:white; 
+	}
+	.tableD table tr:nth-child(odd)
+	{
+		background-color:#99CCCC; 
+	}
+    #backColor
+    {
+    	  background-color: #eae6e4; 
+    }
+    .modifierM
+    {
+    	text-align: center;
+    }
+    .modifierM input[type="date"]
+    {
+    	margin-left: 25%; 
+    }
+    .modifierM input[type="submit"]
+    {
+     	margin-left:0;  
+    }
+    .supprimer input[type="date"]
+    {
+    	margin-left: 25%;
+    }
+    .supprimer input[type="submit"]
+    {
+     	    width:25%; 
+     	    margin-left:40%;  
+    }
+    .tableC
+    {
+    	width: 100%; 
+    } 
+    .chercher input[type="submit"]
+    {
+    	margin-left: 10px; 
+    }
+    .article2 h1
+    {
+    	text-align: left;
+    	font-size: 1.3rem; 
+    }
+}
+#Minuscule
+{
+	text-transform: lowercase;
+}

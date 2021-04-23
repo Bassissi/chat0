@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<section>
+
+
+			        <!-- messages:-->
+	        <div class="message">
+	       
+             <?php         
+          
+             if(empty($_SESSION['messageSCI'])==false)
+             	echo '<p style="color:red;">'.$_SESSION['messageSCI'].'</p>'; 
+
+             if(empty($_SESSION['messageAjouter'])==false)
+             	echo '<p style="color:red;">'.$_SESSION['messageAjouter'].'</p>';            
+
+	        if(empty($_SESSION['messageModifier'])==false)
+	            echo '<p style="color:red;">'.$_SESSION['messageModifier'].'</p>';
+	             
+	          session_unset();                
+             ?>
+
+	        </div>
+
+	<!-- On cherche nos annonces-->	
+
+		<div >
+			<?php if (empty($annoncePs)!==true):?>
+				<table class="table1">
+     <!-- On compte combien on a des annonces-->				
+					<?php 
+						$counter=0; 
+						foreach ($annoncePs as $key)
+						$counter+=1; 
+					    if($counter==1|$counter==0)
+						    	$message=$counter.' chat perdu'; 
+						else
+						    	$message=$counter.' chats perdus';
+			        ?>
+			        <?php if($counter>=0):?>	       
+			        	<caption>Nous avons <?=$message?> </caption>
+			        <?php endif;?>	  	
+					<tbody>
+
+						<?php foreach($annoncePs as $key =>$annonce): ?>
+
+							<tr>
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='perdue';  
+									}
+									else
+									{
+										$sex='chat';
+										$type='perdu'; 
+									}
+								?>
+
+								<td><img src=<?=$annonce['url']?> style="width:125px; height: 125px;" title='<?=$annonce['name'].', '.$sex.' '.$type.' le ' .$annonce['datePT'] ?>'></td>
+
+
+								<td>
+									<p><?=$annonce['name'].', '.$sex.' <span style="color:red">'.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>'.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</td>
+								
+								<td>
+								   
+									<a href='detail.php?idchat=<?=$annonce['idchat']?>&type=perdu'>La détail » 
+									</a>
+								</td>
+							</tr>
+
+                        <?php  endforeach;?>
+					</tbody>
+				</table>
+			<?php endif;?>
+		</div>
+
+	<!--L'endroit de publicité -->		
+		<div class="publicite" id="p1">
+		    <h3>Publicité</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+	</section>
+</html>

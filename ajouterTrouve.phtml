@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<div>
+		<h3 id="h3T">Publier une annonce pour un chat trouvé</h3>
+		<!--  les message d'erreurs -->
+		<div class="messageE">
+			<?php 
+            if(empty($erreur)==false)
+            	foreach ($erreur as $key => $value)
+            	{
+            		echo '<p>'.$value.'</p>'; 
+            	}
+            	
+			?>
+		</div>
+
+		<form method="POST" action="ajouter.php?type=trouve" enctype="multipart/form-data">	
+		 	
+		 	<fieldset class="field2">
+		 	    <legend><strong> Informations sur un chat trouvé</strong></legend>
+		 	    <!--nom-->		
+				<label for="nom">Nom de ce chat si vous savez   </label>
+				<input type="text" name="nom" class="name" size="15" maxlength="15" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ -]+" minlength="3" placeholder="si vous savez" >
+			    <br>		 	    
+
+		        <!--sex-->	
+				<label for="sex">Sexe  </label>				
+				<input type="radio" name="sex" value="male" checked>
+				<label for="sex"> Mâle </label>				
+				<input type="radio" name="sex" value="femelle">	
+				<label for="sex"> Femelle </label>			
+				<br>
+           
+		 		<!--race-->	
+				<label for="race">Race dominante </label>
+				<select name="race">
+
+						<option value="Aucune">Aucune race particulière (croisé)</option>
+						<option value="Abyssin">Abyssin</option>
+						<option value="Américain à poil dur">Américain à poil dur</option>	
+						<option value="American Bobtail">American Bobtail</option>
+						<option value="American Shorthair">American Shorthair</option>
+						<option value="Angora Turc">Angora Turc</option>
+						<option value="Balinais">Balinais</option>
+						<option value="Bengal">Bengal</option>
+						<option value="Bleu Russe">Bleu Russe</option>
+						<option value="Bombay">Bombay</option>
+						<option value="British Shorthair">British Shorthair</option>
+						<option value="Burmese">Burmese</option>
+						<option value="Chartreux">Chartreux</option>
+						<option value="Chat de gouttière">Chat de gouttière</option>
+						<option value="Chat des bois Norvégiens">Chat des bois Norvégiens</option>
+						<option value="Chat du Sri Lanka">Chat du Sri Lanka</option>
+						<option value="Chat sacré de Birmanie">Chat sacré de Birmanie</option>
+						<option value="Commun">Commun</option>
+						<option value="Cornish rex">Cornish rex</option>
+						<option value="Devon rex">Devon rex</option>
+						<option value="Européen">Européen</option>
+						<option value="Exotic Shorthair">Exotic Shorthair</option>
+						<option value="Himalayan">Himalayan</option>
+						<option value="Korat">Korat</option>
+						<option value="Maine Coon">Maine Coon</option>
+						<option value="Mandarin">Mandarin</option>
+						<option value="Norvégien">Norvégien</option>
+						<option value="Ocicat">Ocicat</option>
+						<option value="Oriental">Oriental</option>
+						<option value="Persan">Persan</option>
+						<option value="Ragdoll">Ragdoll</option>
+						<option value="Rex Selkirk">Rex Selkirk</option>
+						<option value="Scottish Fold">Scottish Fold</option>
+						<option value="Siamois">Siamois</option>
+						<option value="Sibérien">Sibérien</option>
+						<option value="Somali">Somali</option>
+						<option value="Sphynx">Sphynx</option>	
+				</select>
+
+				<!--couleurs-->
+
+				<br>		 		
+				<label for="couleurs"> Couleurs </label>
+				<div style="display: inline-block; vertical-align: text-top;">				
+					<input type="checkbox" name="c1" value="noir" >
+					<label for="noir">Noir</label>	
+					<br>				
+					<input type="checkbox" name="c2" value="marron" >
+					<label for="marron">Marron</label>				
+	                <br> 				
+					<input type="checkbox" name="c3" value="gris" >
+					<label for="gris">Gris</label>				
+	                <br>				
+					<input type="checkbox" name="c4" value="blans" >	
+					<label for="blans">Blanc</label>			
+	                <br>                
+					<input type="checkbox" name="c5" value="beige" >
+					<label for="beige">Beige</label>				
+	                <br>    
+					<input type="checkbox" name="c6" value="roux" >
+					<label for="roux">Roux</label>				
+	                <br> 				
+					<input type="checkbox" name="c7" value="écaille" >
+					<label for="écaille">Ecaille</label>		
+				</div>			
+                <br> 
+                                                                             
+                <!--Longeur du pelage-->
+                <label for="poils">Longueur du pelage</label>
+                <select name=poils>
+	                <option value="court" >court</option>
+	                <option value="long" >long</option>	
+                </select>
+                <br class="espace">
+                <!--Dessin du pelage-->
+                <label for="pelage">Dessin du pelage</label>
+                <select name=pelage>
+	                <option value="uni" >uni</option>
+	                <option value="tigré">tigré</option>
+	                <option value="taché">tacheté</option>	
+                </select>
+                <br class="espace">
+
+                <!--Castré-->
+                <label for="castre">Castré/Stérilisé </label>
+				<input type="radio" name="castre" value="oui" checked>
+				<label for="castre"> Oui </label>				
+				<input type="radio" name="castre" value="non">	
+				<label for="castre"> Non </label>	
+                <br class="espace">
+
+                 <!--Photo-->
+                 <label for="uplaodI"><strong>Téléchargez sa photo </strong></label>
+                 <input type="file"  style="color:red;"  name="uplaodI"> 
+                 <br class="espace">   
+
+                <!--datePT-->
+                 <label class="block">Quand avez-vous trouvé ce chat </label>
+                 <select name="jourPT">
+				    <?php for($i=1;$i<32;$i++):?>
+						<option <?php if($i==1|$i<=9) echo 'value=0'.$i; else echo 'value='.$i; ?> <?php if($i==date('d')):?> <?='selected'?> <?php endif?>><?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?></option>
+					<?php endfor;?>
+			    </select>
+				<select name="moisPT">
+				    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+						<option <?php $j=$key+1;if($j==1 | $j<=9) echo 'value=0'.$j; else echo 'value='.$j; ?><?php if($key+1==date('m')):?> <?='selected'?> <?php endif?>><?=$value?></option>
+					<?php endforeach;?>
+				</select>
+				<select name="anPT">
+				    <?php for($i=date('Y')-4;$i<=date('Y');$i++):?>
+						<option value=<?=$i?><?php if($i==date('Y')):?> <?='selected'?> <?php endif?>><?=$i?></option>
+					<?php endfor;?>
+				</select>  
+
+				<!--description-->              
+                 <br class="espace">
+                 <label for="description" style="vertical-align: top;">Caractères particuliers</label>
+                 <textarea placeholder="Cette place pour écrire des informations complémentaires." name="description" maxlength="200"></textarea>
+                 <br class="espace">
+             <!-- lieu-->
+
+                 <label for="rue"> Rue</label>
+				 <input type="text" name="rue" class="rue" maxlength="40" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ,.'- 0-9-]+" >
+			    <br > 
+				<label for="arrondissement">Arrondissement</label>
+				<select name="arrondissement">
+					<?php for($i=13001;$i<13017;$i++):?>
+						<option value=<?=$i?>>
+							<?=$i?>
+						</option>
+					<?php endfor;?>	
+				</select>                 
+	        </fieldset>
+	        <fieldset class="field2">
+	        	<legend ><strong> Vos données</strong></legend>
+	        	<label for="dateNaissance" class="block">Date de naissance</label>
+                 <select name="jour">
+				    <?php for($i=1;$i<32;$i++):?>
+						<option <?php if($i==1|$i<=9) echo 'value=0'.$i; else echo 'value='.$i; ?> ><?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?></option>
+					<?php endfor;?>
+			    </select>
+	            <?='/'?>
+
+				<select name="mois">
+				    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+						<option <?php $j=$key+1;if($j==1 | $j<=9) echo 'value=0'.$j; else echo 'value='.$j; ?>><?=$value?></option>
+					<?php endforeach;?>
+				</select>
+	            <?='/'?>
+
+				<select name="an" >
+				    <?php for($i=1935;$i<=date('Y')-15;$i++):?>
+						<option value=<?=$i?> <?php if($i==1980):?> <?='selected'?> <?php endif?>><?=$i?></option>
+					<?php endfor;?>
+				</select>
+				<br class="espace">
+			<!-- Phone-->
+			<label for="phone">Numéro de téléphone</label>
+			<input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10">
+	        </fieldset>
+            <input type="submit" name="submit" class="submit" value="Publier" onclick="message()" >  	        
+		</form>
+	</div>
+		<!-- L'endroit de publicité-->
+		<div id="p1" class="publicite">
+		    <h3>Publicite</h3>
+			<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>"></a>
+		<div>
+
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+
+	<!-- javascript-->
+	<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment publier cette annonce ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à ajouter une annonce !");
+          	
+          	setTimeout(function() {window.location.assign("index.php");},2500); 
+             	
+          	        	
+          }	 
+		}
+        
+	</script>		
+</html>
